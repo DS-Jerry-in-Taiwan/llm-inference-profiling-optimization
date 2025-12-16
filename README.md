@@ -31,8 +31,8 @@ Achieved up to **2.6x speedup** on GPT-2 inference using Quantization and ONNX o
 
 ```bash
 # 1. Clone and enter the repo
-git clone <your-repo-url>
-cd llm-inference-optimization
+git clone https://github.com/DS-Jerry-in-Taiwan/llm-inference-profiling-optimization.git
+cd llm-inference-profiling-optimization
 
 # 2. (Optional) Create and activate a virtual environment
 python3 -m venv venv
@@ -41,17 +41,27 @@ source venv/bin/activate
 # 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Run baseline experiment
+# 4. Run environment check (optional, recommended)
+python setup_check.py
+
+# 5. Run baseline experiment
 python src/baseline.py
 
-# 5. Run ONNX optimization
+# 6. Run ONNX optimization
 python src/optimize_onnx.py
 
-# 6. Run quantization experiment
+# 7. Run quantization experiment
 python src/optimize_quantization.py
 
-# 7. View results
+# 8. View results (charts and JSON)
 ls results/charts/
+ls results/*.json
+
+# 9. Open charts (example)
+# On Linux/macOS:
+xdg-open results/charts/final_comparison.png
+# On Windows:
+start results/charts/final_comparison.png
 ```
 
 ---
