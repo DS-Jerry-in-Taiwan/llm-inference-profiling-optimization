@@ -1,0 +1,25 @@
+@workspace /new_task Phase 5: Documentation & Final Polish
+
+We have successfully completed all experiments (Phase 1-4). Now, act as the **Technical Writer** to finish Phase 5.
+
+# Step 1: Define Context & Specs
+Create the following files in `.agent_docs/`:
+1. `.agent_docs/phase5_agent_context.md`
+2. `.agent_docs/phase5_task_specification.md`
+
+(I will provide the content shortly.)
+
+# Step 2: Execute Phase 5
+1. **Create `README.md`**:
+   - Use the results we gathered (1.65s Baseline, 0.64s Quantized).
+   - Make it professional and include the `final_comparison.png`.
+
+2. **Create `docs/methodology.md`**:
+   - Explain the technical details of KV-Cache, ONNX, and Quantization.
+   - Discuss the trade-offs we observed.
+
+3. **Cleanup**:
+   - Review the `src/` directory and add docstrings to the scripts if missing.
+   - Ensure the repository is clean.
+
+Ready? Ask me for the file contents.

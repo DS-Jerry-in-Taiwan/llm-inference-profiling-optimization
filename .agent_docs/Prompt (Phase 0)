@@ -1,0 +1,27 @@
+@workspace /new_task Project Setup: LLM Inference Profiling & Optimization (Phase 0)
+
+I need you to act as the **Project Setup Agent** to initialize a new Python project.
+
+# Step 1: Create Context Documents
+First, please create a directory named `.agent_docs` and create the following 4 files inside it with the content provided below. These files define the specifications you must follow.
+
+1. `.agent_docs/phase0_agent_context.md`
+2. `.agent_docs/phase0_task_specification.md`
+3. `.agent_docs/phase0_verification_guide.md`
+4. `.agent_docs/phase0_handoff_document.md`
+
+(I will paste the content of these files in the next message, or you can ask me for them if you don't have them yet.)
+
+# Step 2: Execute Phase 0
+Once the docs are created, read `.agent_docs/phase0_task_specification.md` and execute the instructions to:
+1. Create the project directory structure (src, results, etc.).
+2. Create configuration files (`requirements.txt`, `.gitignore`, `README.md`).
+3. Create the verification script `setup_check.py`.
+
+# Step 3: Verify
+Run `python setup_check.py` to confirm the environment is ready.
+
+# Step 4: Handoff
+Update `.agent_docs/phase0_handoff_document.md` with the execution results.
+
+Ready? Please ask me for the file contents.

@@ -1,0 +1,23 @@
+@workspace /new_task Phase 1: Baseline & KV-Cache Development
+
+I need you to act as the **Baseline Development Agent** for Phase 1.
+
+# Step 1: Define Context & Specs
+Create the following two files in `.agent_docs/` to define your role and task:
+
+1. `.agent_docs/phase1_agent_context.md` (Defines your role as Inference Specialist)
+2. `.agent_docs/phase1_task_specification.md` (Defines the coding tasks)
+
+(I will provide the content for these files shortly.)
+
+# Step 2: Execute Phase 1
+Act according to your role defined in the context file.
+1. Read the specs.
+2. Implement `src/baseline.py`.
+3. Run the baseline experiment.
+4. Generate the results (JSON & PNG).
+
+# Step 3: Report
+After execution, provide a summary of the performance difference you observed between `use_cache=True` and `use_cache=False`.
+
+Please ask me for the file contents.

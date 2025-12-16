@@ -1,0 +1,12 @@
+torch==2.1.2
+transformers==4.35.2
+accelerate>=0.20
+onnx>=1.14
+onnxruntime>=1.15
+tensorboard>=2.13
+matplotlib>=3.7
+seaborn>=0.12
+numpy==1.26.4
+pandas>=1.5
+tqdm>=4.65
+jupyter>=1.0

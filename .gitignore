@@ -1,0 +1,34 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Model files
+*.bin
+*.onnx
+*.pt
+
+# Results and logs
+results/
+traces/
+charts/
+*.json
+*.png
+*.log
+*.csv
+
+# TensorBoard logs
+runs/
+
+# IDE and environment
+.vscode/
+.idea/
+venv/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,25 @@
+@workspace /new_task Phase 2: Profiling & Bottleneck Analysis
+
+We are ready for Phase 2. I need you to act as the **Profiling Specialist**.
+
+# Step 1: Define Context & Specs
+Create the following files in `.agent_docs/`:
+1. `.agent_docs/phase2_agent_context.md`
+2. `.agent_docs/phase2_task_specification.md`
+
+(I will provide the content shortly.)
+
+# Step 2: Execute Phase 2
+1. **Implement `src/profiling.py`**:
+   - Integrate `torch.profiler`.
+   - Ensure you capture traces for both `use_cache=True` and `False`.
+   - Print the top 10 operators by CPU time to the console.
+
+2. **Run Profiling**:
+   - Execute the script to generate trace JSON files in `results/traces/`.
+
+3. **Analyze**:
+   - Create `results/profiling_report.md`.
+   - Summarize which operators (e.g., `aten::matmul`, `aten::softmax`) consume the most time in each scenario.
+
+Ready? Ask me for the file contents.

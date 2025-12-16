@@ -1,0 +1,28 @@
+@workspace /new_task Phase 3: ONNX Optimization
+
+Phase 2 is done. Now we act as the **Optimization Engineer** for Phase 3.
+
+# Step 1: Define Context & Specs
+Create the following files in `.agent_docs/`:
+1. `.agent_docs/phase3_agent_context.md`
+2. `.agent_docs/phase3_task_specification.md`
+
+(I will provide the content shortly.)
+
+# Step 2: Execute Phase 3
+1. **Implement `src/optimize_onnx.py`**:
+   - I suggest trying to use `optimum` library first if available, as it handles KV-cache export automatically.
+   - If `optimum` is not installed, fall back to standard `torch.onnx.export` (you might need to install `optimum` and `onnx` via pip if they are missing).
+   
+2. **Export Model**:
+   - Save the converted model to `models/gpt2.onnx`.
+
+3. **Benchmark**:
+   - Run inference using `onnxruntime`.
+   - Compare the latency with the PyTorch baseline.
+
+4. **Report**:
+   - Generate a new chart `results/charts/onnx_comparison.png`.
+   - Print the speedup factor to the console.
+
+Ready? Ask me for the file contents.
