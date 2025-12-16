@@ -10,13 +10,36 @@ __pycache__/
 *.bin
 *.onnx
 *.pt
+*.safetensors
+models/
 
 # Results and logs
-results/
-traces/
-charts/
-*.json
-*.png
+# 保留 results/ 目錄，但忽略大型二進位檔與暫存
+results/*.log
+results/*.csv
+results/*.tmp
+results/*.npy
+results/*.npz
+
+# 允許追蹤 charts/ 與 traces/ 內的圖表與 json/md
+!results/charts/
+!results/charts/*.png
+!results/charts/*.json
+!results/charts/*.md
+!results/traces/
+!results/traces/*.json
+!results/traces/*.md
+
+# 僅忽略 charts/ 與 traces/ 內的暫存或大型檔案
+results/charts/*.log
+results/charts/*.tmp
+results/charts/*.npy
+results/charts/*.npz
+results/traces/*.log
+results/traces/*.tmp
+results/traces/*.npy
+results/traces/*.npz
+
 *.log
 *.csv
 

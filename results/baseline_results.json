@@ -1,0 +1,49 @@
+{
+  "no_cache": {
+    "prefill_latency_avg": 0.0735287359978732,
+    "decode_latency_per_token_avg": 0.03161926609371827,
+    "total_latency_avg": 1.654492040683787,
+    "prefill_latencies": [
+      0.17996103799669072,
+      0.02031766399886692,
+      0.02030750599806197
+    ],
+    "decode_latencies": [
+      0.029391794000548543,
+      0.032709052119607805,
+      0.03275695216099848
+    ],
+    "total_latencies": [
+      1.649550738024118,
+      1.6557702699792571,
+      1.658155114047986
+    ]
+  },
+  "with_cache": {
+    "prefill_latency_avg": 0.01954943433520384,
+    "decode_latency_per_token_avg": 0.013884949167307543,
+    "total_latency_avg": 0.713796892700581,
+    "prefill_latencies": [
+      0.0195764060044894,
+      0.019475790002616122,
+      0.019596106998506002
+    ],
+    "decode_latencies": [
+      0.013945724320365116,
+      0.014098470220487798,
+      0.013610652961069718
+    ],
+    "total_latencies": [
+      0.7168626220227452,
+      0.724399301027006,
+      0.7001287550519919
+    ]
+  },
+  "config": {
+    "model": "gpt2",
+    "prompt": "The future of artificial intelligence is",
+    "max_new_tokens": 50,
+    "num_runs": 3,
+    "device": "cpu"
+  }
+}
