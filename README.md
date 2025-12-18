@@ -68,11 +68,57 @@ start results/charts/final_comparison.png
 
 ## Project Structure
 
-- `src/` - All experiment scripts (with docstrings and comments)
-- `results/` - JSON metrics and charts
-- `models/` - Downloaded and quantized model files
-- `docs/` - Technical methodology and deep dives
-- `notebooks/` - Jupyter analysis (optional)
+Project directory structure and the purpose of each path/file:
+
+```
+llm-inference-optimization/
+├── README.md                # Project overview, quick start, workflow, and results
+├── requirements.txt         # Python dependencies
+├── setup_check.py           # Environment check script
+├── docs/
+│   └── methodology.md       # Technical methodology and details
+├── models/
+│   ├── gpt2_int8.pt         # Quantized GPT2 PyTorch weights
+│   ├── gpt2.onnx            # Converted ONNX model
+│   └── ...                  # Other model files and configs
+├── notebooks/
+│   └── analysis.ipynb       # Jupyter Notebook for interactive analysis (optional)
+├── results/
+│   ├── baseline_results.json        # Baseline experiment results
+│   ├── onnx_results.json            # ONNX experiment results
+│   ├── quantization_results.json    # Quantization experiment results
+│   ├── profiling_report.md          # Profiler analysis report
+│   ├── charts/
+│   │   └── ...                      # Performance comparison charts
+│   └── traces/
+│       ├── trace_no_cache.json      # Profiler trace (no KV-cache)
+│       └── trace_with_cache.json    # Profiler trace (with KV-cache)
+├── src/
+│   ├── __init__.py                  # Python module initialization
+│   ├── baseline.py                  # Baseline inference and latency measurement
+│   ├── optimize_onnx.py             # ONNX export and performance testing
+│   ├── optimize_quantization.py     # Quantization and accuracy/performance testing
+│   ├── profiling.py                 # Profiler deep analysis and bottleneck report
+│   ├── modeling.py                  # (Extensible) model-related utilities
+│   ├── optimization.py              # (Extensible) optimization utilities
+│   └── utils.py                     # (Extensible) general helper functions
+```
+
+- **README.md**: Project overview, usage instructions, workflow, and results.
+- **requirements.txt**: All required Python packages.
+- **setup_check.py**: Checks if your environment meets project requirements.
+- **docs/methodology.md**: Technical details, methodology, and design trade-offs.
+- **models/**: Stores all model files (original, ONNX, quantized, etc.).
+- **notebooks/**: Jupyter Notebooks for interactive analysis and visualization.
+- **results/**: All experiment results (JSON, charts, traces, reports).
+  - **charts/**: Performance comparison charts (latency, throughput, etc.).
+  - **traces/**: PyTorch Profiler traces for Chrome Trace Viewer.
+- **src/**: All core scripts and code.
+  - **baseline.py**: Baseline inference and latency measurement.
+  - **optimize_onnx.py**: ONNX export and performance testing.
+  - **optimize_quantization.py**: Quantization and accuracy/performance testing.
+  - **profiling.py**: PyTorch Profiler deep analysis and bottleneck reporting.
+  - Other files: Extensible for custom tools or helper functions.
 
 ---
 
@@ -84,34 +130,34 @@ See [docs/methodology.md](docs/methodology.md) for technical details on KV-Cache
 
 ## Core Performance Engineering Workflow
 
-本專案的效能優化與分析流程如下：
+This project’s performance optimization and analysis workflow:
 
-1. **定義使用場景與需求**  
-   明確你的應用目標與效能需求。
+1. **Define use cases and requirements**  
+   Clearly specify your application goals and performance needs.
 
-2. **歸類到四大核心類別**  
-   - 使用者體驗 (UX)
-   - 系統容量 (Capacity)
-   - 資源效率 (Efficiency)
-   - 穩定性 (Reliability)
+2. **Classify into four core categories**  
+   - User Experience (UX)
+   - System Capacity
+   - Resource Efficiency
+   - Reliability
 
-3. **針對歸類挑選指標**  
-   例如：UX 關注延遲，Efficiency 關注資源用量等。
+3. **Select metrics based on classification**  
+   E.g., UX focuses on latency, Efficiency on resource usage, etc.
 
-4. **把指標寫到 baseline 做資料收集**  
-   以 `baseline.py` 收集各種優化前後的指標數據。
+4. **Implement metrics in the baseline for data collection**  
+   Use `baseline.py` to collect metrics before and after optimization.
 
-5. **把指標定義到 profiler 並分析推論模組效能**  
-   以 profiler 針對細部 operator 做分析，找出瓶頸。
+5. **Define metrics in the profiler and analyze inference performance**  
+   Use the profiler to analyze operator-level details and identify bottlenecks.
 
-6. **針對分析找出瓶頸**  
-   這是效能優化的核心。
+6. **Identify bottlenecks based on analysis**  
+   This is the core of performance optimization.
 
-7. **優化瓶頸**  
-   例如用 KV-cache、ONNX、量化等技術。
+7. **Optimize bottlenecks**  
+   E.g., using KV-cache, ONNX, quantization, etc.
 
-8. **透過 baseline 驗證優化結果**  
-   再次量測指標，確認優化是否有效。
+8. **Validate optimization results with the baseline**  
+   Re-measure metrics to confirm the effectiveness of optimizations.
 
 ---
 
